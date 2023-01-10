@@ -1,4 +1,4 @@
-export const smIconPokeball = ({ ...props }) => {
+export const IconSmPokeball = ({ ...props }) => {
   return (
     <svg
       {...props}
@@ -22,7 +22,7 @@ export const smIconPokeball = ({ ...props }) => {
   );
 };
 
-export const xlIconPokeball = ({ ...props }) => {
+export const IconXlPokeball = ({ ...props }) => {
   return (
     <svg {...props} width="206" height="208" viewBox="0 0 206 208" fill="none">
       <g opacity="0.1">
