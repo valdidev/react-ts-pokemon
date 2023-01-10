@@ -1,5 +1,6 @@
+import axios from "axios";
 import { createContext, useState } from "react";
-import { PokemonType } from "../interfaces/types";
+import { AllPokemonResultType, PokemonType } from "../interfaces/types";
 
 interface ContextProps {
   types: PokemonType[];
@@ -25,9 +26,19 @@ const PokemonProvider = ({ children }: any) => {
   const [types, setTypes] = useState([defaultState]);
   const [filterSelected, setFilterSelected] = useState(defaultState);
 
-  return (
+  const getAllPokemon = async () => {
+    const { data } = await axios.get(endpointAllPokemon);
+
+    console.log(data);
+
+    let allPokemon = data?.results?.map(
+      (pokemon: AllPokemonResultType) => pokemon?.url
+    );
+  };
+
+  /* return (
     <PokemonContext.Provider value={{}}>{children}</PokemonContext.Provider>
-  );
+  ); */
 };
 
 export { PokemonProvider };
