@@ -1,6 +1,6 @@
+import { PokemonTypes } from "../utils/colorsByPokemonType";
+
 export type PokemonType = {
-  name: PokemonType | "All";
+  name: PokemonTypes | "All";
   url?: string;
 };
-
-

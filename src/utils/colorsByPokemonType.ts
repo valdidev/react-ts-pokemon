@@ -1,4 +1,4 @@
-export type PokemonType =
+export type PokemonTypes =
   | "fighting"
   | "normal"
   | "ground"
@@ -20,7 +20,7 @@ export type PokemonType =
   | "shadow"
   | "unknown";
 
-export const background: { [key in PokemonType]: string } = {
+export const background: { [key in PokemonTypes]: string } = {
   fighting: "#C12239",
   normal: "#AAA67F",
   ground: "#DEC16B",
