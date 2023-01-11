@@ -1,6 +1,10 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { AllPokemonResultType, PokemonType } from "../interfaces/types";
+import {
+  AllPokemonResultType,
+  PokemonByTypeResultType,
+  PokemonType,
+} from "../interfaces/types";
 
 interface ContextProps {
   types: PokemonType[];
@@ -25,8 +29,6 @@ const PokemonProvider = ({ children }: any) => {
   const [types, setTypes] = useState([defaultState]);
   const [filterSelected, setFilterSelected] = useState(defaultState);
 
-  const changeSelectedType = () => {};
-
   const getAllPokemon = async () => {
     const { data } = await axios.get(endpointAllPokemon);
 
@@ -43,7 +45,29 @@ const PokemonProvider = ({ children }: any) => {
     setFilteredPokemon(allPokemon);
   };
 
+  const getPokemonByType = async () => {
+    const { data } = await axios.get("https://pokeapi.co/api/v2/type");
+
+    console.log(data);
+
+    setTypes([...types, ...data.results]);
+  };
+
+  const changeSelectedType = async (type: PokemonType) => {
+    setFilterSelected(type);
+
+    const { data } = await axios.get(type?.url!);
+    let pokemonByType = data?.pokemon?.map(
+      ({ pokemon }: PokemonByTypeResultType) => pokemon?.url
+    );
+
+    type.name !== "All"
+      ? setFilteredPokemon(pokemonByType)
+      : setFilteredPokemon(pokemon);
+  };
+
   useEffect(() => {
+    getPokemonByType();
     getAllPokemon();
   }, []);
 

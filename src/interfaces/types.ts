@@ -9,3 +9,10 @@ export type AllPokemonResultType = {
   name: string;
   url: string;
 };
+
+export type PokemonByTypeResultType = {
+  pokemon: {
+    name: string;
+    url: string;
+  };
+};
