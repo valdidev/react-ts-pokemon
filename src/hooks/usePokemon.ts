@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IPokemon } from "../interfaces/interfaces";
 
 export const usePokemon = (url?: string, id?: string) => {
   const [pokemon, setPokemon] = useState<null | undefined | IPokemon>();
 
-  const fetchPokemon = async () => {
+  const axiosGetPokemon = async () => {
     if (url) {
       const { data } = await axios.get(url);
       setPokemon(data);
@@ -17,5 +17,9 @@ export const usePokemon = (url?: string, id?: string) => {
     }
   };
 
-  return {};
+  useEffect(() => {
+    axiosGetPokemon();
+  }, []);
+
+  return { pokemon };
 };

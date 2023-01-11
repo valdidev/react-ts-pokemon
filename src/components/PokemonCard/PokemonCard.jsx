@@ -1,7 +1,12 @@
+import { usePokemon } from "../../hooks/usePokemon";
 import styles from "./style.module.scss";
 
-export const PokemonCard = () => {
-  return (
-    <div>PokemonCard</div>
-  )
+interface Props {
+  url: String;
 }
+
+export const PokemonCard = ({ url }: Props) => {
+  const { pokemon } = usePokemon(url);
+
+  return <div>PokemonCard</div>;
+};
