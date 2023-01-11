@@ -32,9 +32,15 @@ const PokemonProvider = ({ children }: any) => {
 
     console.log(data);
 
+    // array of each pokemon url
     let allPokemon = data?.results?.map(
       (pokemon: AllPokemonResultType) => pokemon?.url
     );
+
+    console.log(allPokemon);
+
+    setPokemon(allPokemon);
+    setFilteredPokemon(allPokemon);
   };
 
   useEffect(() => {
