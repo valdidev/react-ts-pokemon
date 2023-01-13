@@ -1,5 +1,10 @@
 {
   "name": "react-ts-pokemon",
+  "author": "Fernando Valdivielso @valdidev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valdidev/react-ts-pokemon"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
