@@ -11,11 +11,18 @@ export const usePagination = () => {
   const nextPage = () => {
     setPage(page + 1);
     navigate(`/?page=${page + 1}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const prevPage = () => {
     setPage(page - 1);
     navigate(`/?page=${page - 1}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
+  const backToHome = () => {
+    setPage(1);
+    navigate("/");
   };
 
   useEffect(() => {
@@ -27,5 +34,6 @@ export const usePagination = () => {
     setPage,
     nextPage,
     prevPage,
+    backToHome,
   };
 };
