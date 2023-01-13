@@ -1,12 +1,17 @@
 import { useContext } from "react";
 import { IconSmPokeball } from "../../assets/pokemonIcons";
+import { Pager } from "../../common/Pager/Pager";
 import { PokemonList } from "../../components/PokemonList/PokemonList";
 import { PokemonContext } from "../../context/PokemonContext";
+import { usePagination } from "../../hooks/usePagination";
 
 import styles from "./styles.module.scss";
 
 export const Home = () => {
   const { filteredPokemon } = useContext(PokemonContext);
+  const { page, nextPage, prevPage } = usePagination();
+
+  let perPage = 12;
 
   return (
     <div className={styles.home}>
@@ -16,7 +21,18 @@ export const Home = () => {
           <span>Pokémon</span>
         </div>
       </header>
-      <PokemonList pokemonURLS={filteredPokemon} />
+      <PokemonList
+        page={page}
+        perPage={perPage}
+        pokemonURLS={filteredPokemon}
+      />
+      <Pager
+        page={page}
+        perPage={perPage}
+        nextPage={nextPage}
+        prevPage={prevPage}
+        maxPokemon={filteredPokemon?.length!}
+      />
     </div>
   );
 };
