@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Spinner } from "../../common/Spinner/Spinner";
 import { usePokemon } from "../../hooks/usePokemon";
 import { background } from "../../utils/colorsByPokemonType";
 import styles from "./style.module.scss";
@@ -28,7 +29,7 @@ export const PokemonCard = ({ url }: Props) => {
           />
         ) : (
           <div className={styles.loadingContainer}>
-            {/* LOADER GOES HERE */}
+            <Spinner color={colorSelected} />
           </div>
         )}
       </div>
