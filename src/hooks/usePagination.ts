@@ -20,6 +20,11 @@ export const usePagination = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const backToHome = () => {
+    setPage(1);
+    navigate("/");
+  };
+
   useEffect(() => {
     setPage(parseInt(searchParams.get("page")!) || 1);
   });
@@ -29,5 +34,6 @@ export const usePagination = () => {
     setPage,
     nextPage,
     prevPage,
+    backToHome,
   };
 };

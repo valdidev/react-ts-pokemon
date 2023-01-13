@@ -9,14 +9,14 @@ import styles from "./styles.module.scss";
 
 export const Home = () => {
   const { filteredPokemon } = useContext(PokemonContext);
-  const { page, nextPage, prevPage } = usePagination();
+  const { page, nextPage, prevPage, backToHome } = usePagination();
 
   let perPage = 12;
 
   return (
     <div className={styles.home}>
       <header>
-        <div>
+        <div onClick={backToHome}>
           <IconSmPokeball />
           <span>Pokémon</span>
         </div>
