@@ -3,8 +3,8 @@ import styles from "./styles.module.scss";
 
 interface Props {
   pokemonURLS?: string[] | null;
-  page: number;
-  perPage: number;
+  page?: number;
+  perPage?: number;
 }
 
 export const PokemonList = ({ page, pokemonURLS, perPage }: Props) => {
