@@ -1,4 +1,4 @@
-import { PokemonCard } from "../PokemonCard/PokemonCard.jsx";
+import { PokemonCard } from "../PokemonCard/PokemonCard.js";
 import styles from "./styles.module.scss";
 
 interface Props {
