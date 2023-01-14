@@ -32,24 +32,17 @@ const PokemonProvider = ({ children }: any) => {
   const getAllPokemon = async () => {
     const { data } = await axios.get(endpointAllPokemon);
 
-    console.log(data);
-
     // array of each pokemon url
     let allPokemon = data?.results?.map(
       (pokemon: AllPokemonResultType) => pokemon?.url
     );
-
-    console.log(allPokemon);
-
+    
     setPokemon(allPokemon);
     setFilteredPokemon(allPokemon);
   };
 
   const getPokemonByType = async () => {
     const { data } = await axios.get("https://pokeapi.co/api/v2/type");
-
-    console.log(data);
-
     setTypes([...types, ...data.results]);
   };
 
