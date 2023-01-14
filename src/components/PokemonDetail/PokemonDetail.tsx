@@ -6,6 +6,7 @@ import { Stats } from "./components/Stats/Stats";
 import { Title } from "./components/Title/Title";
 import { background } from "../../utils/colorsByPokemonType"
 import styles from "./styles.module.scss";
+import { Loader } from "../../common/Loader/Loader";
 
 interface Props {
   pokemon: IPokemon | null;
@@ -18,7 +19,7 @@ export const PokemonDetail = ({ pokemon }: Props) => {
   if (!pokemon) {
     return (
       <div style={{ background : colorSelected }} className={styles.loading}>
-        <span>Loading...</span>
+        <Loader size={50} color="fff" />
       </div>
     );
   }
