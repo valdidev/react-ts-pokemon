@@ -1,4 +1,5 @@
 import { IPokemon } from "../../interfaces/interfaces";
+import { Header } from "./components/Header/Header";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -19,7 +20,7 @@ export const PokemonDetail = ({ pokemon }: Props) => {
 
   return (
     <div style={{ background: colorSelected }} className={styles.bg}>
-      <span>components...</span>
+      <Header pokemon={pokemon} />
     </div>
   );
 };
