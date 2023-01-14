@@ -1,5 +1,6 @@
 import { IPokemon } from "../../interfaces/interfaces";
 import { Header } from "./components/Header/Header";
+import { PokemonTypes } from "./components/PokemonTypes/PokemonTypes";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -29,6 +30,7 @@ export const PokemonDetail = ({ pokemon }: Props) => {
           }
           alt={pokemon?.name}
         />
+        <PokemonTypes pokemon={pokemon} />
       </div>
     </div>
   );
