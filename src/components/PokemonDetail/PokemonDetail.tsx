@@ -21,6 +21,15 @@ export const PokemonDetail = ({ pokemon }: Props) => {
   return (
     <div style={{ background: colorSelected }} className={styles.bg}>
       <Header pokemon={pokemon} />
+      <div className={styles.info}>
+        <img
+          src={
+            pokemon?.sprites?.other?.dream_world?.front_default ||
+            pokemon?.sprites?.front_default
+          }
+          alt={pokemon?.name}
+        />
+      </div>
     </div>
   );
 };
