@@ -5,9 +5,6 @@ export const usePagination = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [page, setPage] = useState<number>(1);
-
-  console.log({ searchParams });
-
   const nextPage = () => {
     setPage(page + 1);
     navigate(`/?page=${page + 1}`);

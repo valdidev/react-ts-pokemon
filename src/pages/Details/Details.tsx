@@ -6,7 +6,5 @@ export const Details = () => {
   const { pokemonId } = useParams();
   const { pokemon } = usePokemon("", pokemonId);
 
-  // console.log(pokemon);
-
   return <PokemonDetail pokemon={pokemon!} />;
 };
