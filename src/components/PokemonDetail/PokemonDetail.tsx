@@ -1,7 +1,10 @@
 import { IPokemon } from "../../interfaces/interfaces";
+import { BaseStats } from "./components/BaseStats/BaseStats";
 import { Header } from "./components/Header/Header";
 import { PokemonTypes } from "./components/PokemonTypes/PokemonTypes";
+import { Stats } from "./components/Stats/Stats";
 import { Title } from "./components/Title/Title";
+import { background } from "../../utils/colorsByPokemonType"
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -14,7 +17,7 @@ export const PokemonDetail = ({ pokemon }: Props) => {
 
   if (!pokemon) {
     return (
-      <div style={{ background: colorSelected }} className={styles.loading}>
+      <div style={{ background : colorSelected }} className={styles.loading}>
         <span>Loading...</span>
       </div>
     );
@@ -33,6 +36,9 @@ export const PokemonDetail = ({ pokemon }: Props) => {
         />
         <PokemonTypes pokemon={pokemon} />
         <Title content="About" colorSelected={colorSelected}/>
+        <Stats pokemon={pokemon}/>
+        <Title content="Base Stats" colorSelected={colorSelected}/>
+        <BaseStats pokemon={pokemon} colorSelected={colorSelected}/>
       </div>
     </div>
   );
