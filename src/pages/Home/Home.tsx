@@ -19,7 +19,7 @@ export const Home = () => {
       <header>
         <div onClick={backToHome}>
           <IconSmPokeball />
-          <span>Pokémon</span>
+          <span>Pokédex</span>
         </div>
       </header>
       <FilterByType />
