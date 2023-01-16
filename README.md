@@ -2,6 +2,10 @@
 ## _UI con React.js consumiendo el API pública de Pokeapi.co_
 ![download](https://user-images.githubusercontent.com/96445737/212669378-a699e1ae-b9bf-4b54-a3af-14c78b673511.png)
 ***
+## Visita la APP :eye:
+[APP desplegada en Netlify](https://my-pokedex-react-typescript.netlify.app/)
+
+***
 ## Tecnologías :zap:
 - React
 - TypeScript 
@@ -31,7 +35,7 @@
 #### Recorre los tipos de Pokémon y los vincula con su color
 ***
 
-## Pruébala en local (pronto haré el deploy)
+## Pruébala en local (o entra en la [web](https://my-pokedex-react-typescript.netlify.app/))
 ### 1. Descarga el repositorio
 
 _Esquina superior derecha, botón verde Code, "Download ZIP"_
