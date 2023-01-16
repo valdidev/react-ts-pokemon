@@ -18,6 +18,11 @@
 
 ### :star: Filtrado por tipo de Pokémon
 ![por-tipo](https://user-images.githubusercontent.com/96445737/212670897-f8573cf2-69b7-45b9-9a95-c8bf92731991.png)
+***
+## Diseño de vista adaptable (Responsive) :left_right_arrow:
+![Screenshot from 2023-01-16 12-53-36](https://user-images.githubusercontent.com/96445737/212672640-56aa3ec6-6d0a-4d61-a359-23e73d8273fc.png)
+
+
 
 ## Puntos a destacar de la aplicación :rocket:
 ### :rocket: El hook usePagination
@@ -39,8 +44,8 @@
 ### :book: Stack Overflow
 ### :book: Chat GPT
 
-## Licencia de uso
+## Licencia de uso :newspaper_roll:
 MIT
 
-## Autor
+## Autor :man_technologist:
 Fernando Valdivielso - @valdidev
